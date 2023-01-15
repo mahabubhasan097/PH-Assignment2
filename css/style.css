@@ -21,7 +21,7 @@ img {
 
 /* header styles start */
 .header,
-.banner {
+.banner, .footer-container {
     background-color: rgba(255, 144, 14, 0.1);
 }
 
@@ -85,7 +85,8 @@ img {
 .banner-content p,
 .quick-feature-content p,
 .all-features-content p,
-.facts-container p , .sponsor-content p{
+.facts-container p,
+.sponsor-content p {
     line-height: 26px;
     color: #727272;
     margin: 20px 0 30px;
@@ -250,14 +251,16 @@ img {
     padding-top: 90px;
 }
 
-.facts-container h1 ,.sponsor-content h1 {
+.facts-container h1,
+.sponsor-content h1 {
     font-weight: 700;
     font-size: 45px;
     line-height: 53px;
     color: #131313;
 }
 
-.facts-container p, .sponsor-content p {
+.facts-container p,
+.sponsor-content p {
     max-width: 540px;
 }
 
@@ -266,15 +269,34 @@ img {
     display: flex;
     justify-content: space-around;
 }
-
+@keyframes floatingobject {
+    0% {
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.06);
+      transform: translatey(0px);
+    }
+    50% {
+      box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+      transform: translatey(-10px);
+    }
+    100% {
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.06);
+      transform: translatey(0px);
+    }
+  }
 .single-achievement {
     text-align: center;
     width: 245px;
     padding: 45px 0 55px;
     border: 1px solid #FF900E;
     border-radius: 8px;
-}
+    animation-duration: 1s;
+    animation-iteration-count: infinite; 
 
+}
+.single-achievement:hover{
+    animation-name: floatingobject;
+    animation-timing-function: ease;
+}
 .single-achievement h3 {
     margin: 10px 0 5px;
     font-weight: 600;
@@ -296,20 +318,45 @@ img {
 /* Facts styles end*/
 
 /* sponsor styles start */
-.sponsor-content{
+.sponsor {
+    padding: 80px 0 100px;
+}
+
+.sponsor-content {
     text-align: center;
 }
-.sponsor-content p{
-    margin: 0 auto;
+
+.sponsor-content p {
+    margin: 20px auto;
 }
-.sponsor-image{
+
+.sponsor-image {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     justify-content: space-between;
     column-gap: 150px;
     align-items: center;
+    margin-top: 50px;
 }
-.sponsor-image img{
-    filter: ;
+
+.sponsor-image img {
+    filter: grayscale(100%);
 }
+
 /* sponsor styles end */
+/* footer styles start */
+.footer{
+    padding-bottom: 200px;
+}
+.footer-container{
+    text-align: center;
+    padding: 40px 0;
+    background: #FFF4E7;
+border-radius: 8px;
+}
+.footer-container p{
+    font-size: 20px;
+line-height: 23px;
+color: #424242;
+}
+/* footer styles end */
